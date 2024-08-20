@@ -13,7 +13,6 @@ const searchFormEl = document.querySelector('.js-search-form');
 const galleryEL = document.querySelector('.js-gallery');
 const loaderEl = document.querySelector('.js-loader');
 
-console.log(searchFormEl);
 
 function showLoader() {
   loaderEl.classList.remove('is-hidden');
@@ -38,7 +37,8 @@ const onSearchFormSubmit = event => {
       message: 'Input field must not be empty',
       position: 'topLeft',
     });
-    galleryEl.innerHTML = '';
+            galleryEL.innerHTML = '';
+            searchFormEl.reset();
     return;
   }
       if (data.hits.length === 0) {
@@ -47,8 +47,7 @@ const onSearchFormSubmit = event => {
             'Sorry, there are no images matching your search query. Please try again!',
           position: 'topRight',
         });
-
-        galleryEl.innerHTML = '';
+          galleryEL.innerHTML = '';
         searchFormEl.reset();
         return;
       }
