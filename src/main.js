@@ -15,7 +15,6 @@ const loaderEl = document.querySelector('.js-loader');
 
 console.log(searchFormEl);
 
-
 function showLoader() {
   loaderEl.classList.remove('is-hidden');
 }
